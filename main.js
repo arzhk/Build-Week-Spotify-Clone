@@ -282,6 +282,7 @@ function getRandomColour() {
 /* PLAYER FUNCTIONALITY */
 
 let song = new Audio();
+console.log(song);
 song.volume = 0.2;
 
 function playMusic() {
@@ -333,18 +334,19 @@ function updateCurrentTimeDisplay(time) {
   let roundedTime = Math.round(time);
 
   let seconds = roundedTime % 60;
+
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
 
   let minutes = (roundedTime - seconds) / 60;
+  console.log(minutes);
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
 
   const currentTime = minutes + ":" + seconds;
 
-  current_time = currentTime;
   currentTimeContainer.innerHTML = currentTime;
 }
 
